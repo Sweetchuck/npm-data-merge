@@ -1,0 +1,15 @@
+
+bins:
+  data-merge:
+    description: |
+      Get JSON or Yaml file names as a command line argument and merge their
+      content into one object and serialize the new object with JSON or Yaml and
+      write it to the standard output.
+
+      For more information run `node bin/data-merge.js --help`
+
+releaseHistory:
+  v1.0.0:
+    date: '2015-11-28'
+    changes:
+      - 'Initial release with basic functions.'

@@ -1,0 +1,87 @@
+{
+  "version": "1.0.0",
+  "name": "data-merge",
+  "description": "Merge two or more YAML or JSON objects into one.",
+  "main": "data-merge.js",
+  "bin": {
+    "bin/data-merge.js": "data-merge"
+  },
+  "keywords": [
+    "yaml",
+    "yml",
+    "json",
+    "merge",
+    "extend",
+    "cli"
+  ],
+  "license": "GPL-2.0+",
+  "homepage": "https://github.com/Sweetchuck/npm-data-merge.git",
+  "bugs": {
+    "url": "https://github.com/Sweetchuck/npm-data-merge/issues"
+  },
+  "repository": {
+    "type": "git",
+    "owner": "Sweetchuck",
+    "name": "npm-data-merge",
+    "url": "https://github.com/Sweetchuck/npm-data-merge.git"
+  },
+  "author": {
+    "name": "Andor Dávid",
+    "url": "https://github.com/Sweetchuck",
+    "github": "Sweetchuck",
+    "twitter": "andor_david",
+    "linkedin": "andor-dávid/5b/484/b83"
+  },
+  "dependencies": {
+    "cli": "^0.11.1",
+    "deep-extend": "^0.4.0",
+    "js-yaml": "^3.4.6"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.1",
+    "nodeunit": "^0.9.1",
+    "swig": "^1.4.2",
+    "tsd": "^0.6.3",
+    "tslint": "^3.0.0",
+    "typescript": "^1.6.2"
+  },
+  "files": [
+    "bin/*",
+    "lib/*",
+    "data-merge.js",
+    "package.json",
+    "npm-shrinkwrap.json",
+    "README.md"
+  ],
+  "scripts": {
+    "get-started": "npm run tsd && npm run tsc && npm run swig-docs",
+    "tsd": "npm run tsd-update && npm run tsd-rebundle",
+    "tsd-update": "tsd update --overwrite",
+    "tsd-rebundle": "tsd rebundle",
+    "pretsc": "npm run clear-src",
+    "tsc": "tsc --project src",
+    "posttsc": "npm run shebang",
+    "shebang": "for i in bin/*.js; do sed -i '1i#!/usr/bin/env node' $i; done",
+    "pretest": "npm run clear-coverage && npm run tsc",
+    "test": "istanbul cover nodeunit $(find ./tests -name '*.js')",
+    "posttest": "npm run test-check-coverage",
+    "test-check-coverage": "istanbul check-coverage",
+    "pretest-custom": "npm run tsc",
+    "test-custom": "nodeunit",
+    "lint": "npm run lint-ts",
+    "lint-ts": "tslint --config tslint.json --format verbose src/**/*.ts",
+    "clear": "npm run clear-coverage && npm run clear-src && npm run clear-tmp",
+    "clear-src": "rm -rf bin lib tasks tests",
+    "clear-coverage": "rm -rf coverage",
+    "clear-tmp": "rm -rf tmp",
+    "mkdir-tmp": "[[ -d 'tmp' ]] || mkdir -p 'tmp'",
+    "preswig-docs-data": "npm run mkdir-tmp",
+    "swig-docs": "npm run swig-docs-data && npm run swig-docs-render",
+    "swig-docs-data": "node bin/data-merge.js merge package.json src/docs/variables.yml > tmp/swig.json",
+    "swig-docs-render": "swig render --json tmp/swig.json src/docs/README.twig > README.md",
+    "git-is-clean": "[[ -z $(git status -s) ]]",
+    "preunpack": "npm pack && npm run clear-tmp && npm run mkdir-tmp",
+    "unpack": "tar zxvf data-merge-*.tgz -C tmp/",
+    "prepublish": "npm run tsc && npm run swig-docs && npm shrinkwrap --dev"
+  }
+}
