@@ -1,10 +1,10 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "data-merge",
   "description": "Merge two or more YAML or JSON objects into one.",
   "main": "data-merge.js",
   "bin": {
-    "bin/data-merge.js": "data-merge"
+    "data-merge": "bin/data-merge.js"
   },
   "keywords": [
     "yaml",
@@ -43,7 +43,8 @@
     "swig": "^1.4.2",
     "tsd": "^0.6.3",
     "tslint": "^3.0.0",
-    "typescript": "^1.6.2"
+    "typescript": "^1.6.2",
+    "ministyle": "~0.1.2"
   },
   "files": [
     "bin/*",
@@ -59,13 +60,15 @@
     "tsd-update": "tsd update --overwrite",
     "tsd-rebundle": "tsd rebundle",
     "pretsc": "npm run clear-src",
-    "tsc": "tsc --project src",
+    "tsc": "tsc --outDir . --project src",
     "posttsc": "npm run shebang",
-    "shebang": "for i in bin/*.js; do sed -i '1i#!/usr/bin/env node' $i; done",
-    "pretest": "npm run clear-coverage && npm run tsc",
-    "test": "istanbul cover nodeunit $(find ./tests -name '*.js')",
-    "posttest": "npm run test-check-coverage",
-    "test-check-coverage": "istanbul check-coverage",
+    "shebang": "for binFileName in bin/*.js; do sed -i '1i#!/usr/bin/env node' $binFileName; done",
+    "tsc-and-test": "npm run tsc && npm test",
+    "test": "npm run test-istanbul",
+    "pretest-istanbul": "npm run clear-coverage",
+    "test-istanbul": "istanbul cover nodeunit $(find ./tests -name '*.js')",
+    "posttest-istanbul": "npm run check-test-coverage-istanbul",
+    "check-test-coverage-istanbul": "istanbul check-coverage",
     "pretest-custom": "npm run tsc",
     "test-custom": "nodeunit",
     "lint": "npm run lint-ts",
@@ -82,6 +85,6 @@
     "git-is-clean": "[[ -z $(git status -s) ]]",
     "preunpack": "npm pack && npm run clear-tmp && npm run mkdir-tmp",
     "unpack": "tar zxvf data-merge-*.tgz -C tmp/",
-    "prepublish": "npm run tsc && npm run swig-docs && npm shrinkwrap --dev"
+    "publishable": "npm run tsc && npm run swig-docs && npm shrinkwrap --dev && npm run git-is-clean"
   }
 }

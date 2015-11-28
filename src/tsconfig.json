@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "outDir": "../../data-merge",
     "removeComments": false,
     "sourceMap": false
   },
