@@ -1,10 +1,10 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "data-merge",
   "description": "Merge two or more YAML or JSON objects into one.",
   "main": "data-merge.js",
   "bin": {
-    "bin/data-merge.js": "data-merge"
+    "data-merge": "bin/data-merge.js"
   },
   "keywords": [
     "yaml",

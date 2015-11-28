@@ -54,6 +54,8 @@ the content of the _tmp/package_ directory.
 
 ## Release History
 
+* **v1.0.1** - 2015-11-28
+  * Fix package.json/bin mapping.
 * **v1.0.0** - 2015-11-28
   * Initial release with basic functions.
 
