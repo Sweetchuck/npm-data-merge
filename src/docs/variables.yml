@@ -9,6 +9,10 @@ bins:
       For more information run `node bin/data-merge.js --help`
 
 releaseHistory:
+  v1.0.1:
+    date: '2015-11-28'
+    changes:
+      - 'Fix package.json/bin mapping.'
   v1.0.0:
     date: '2015-11-28'
     changes:
