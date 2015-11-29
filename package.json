@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "data-merge",
   "description": "Merge two or more YAML or JSON objects into one.",
   "main": "data-merge.js",
@@ -43,8 +43,7 @@
     "swig": "^1.4.2",
     "tsd": "^0.6.3",
     "tslint": "^3.0.0",
-    "typescript": "^1.6.2",
-    "ministyle": "~0.1.2"
+    "typescript": "^1.6.2"
   },
   "files": [
     "bin/*",
