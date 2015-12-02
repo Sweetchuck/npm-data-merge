@@ -5,12 +5,18 @@
     "sourceMap": false
   },
   "files": [
+    "../typings/js-yaml/js-yaml.d.ts",
+    "../typings/nodeunit/nodeunit.d.ts",
     "bin/data-merge.ts",
     "lib/DataMerger.ts",
     "lib/DataMergerCli.ts",
     "tests/lib/DataMerger.ts",
     "tests/lib/DataMergerCli.ts",
     "tests/data-merge.ts",
+    "typings/cli.d.ts",
+    "typings/data-merge.d.ts",
+    "typings/deep-extend.d.ts",
+    "typings/fs.d.ts",
     "data-merge.ts"
   ]
 }

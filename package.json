@@ -71,7 +71,7 @@
     "pretest-custom": "npm run tsc",
     "test-custom": "nodeunit",
     "lint": "npm run lint-ts",
-    "lint-ts": "tslint --config tslint.json --format verbose src/**/*.ts",
+    "lint-ts": "tslint --config tslint.json --format verbose $(git ls-files -- '*.ts')",
     "clear": "npm run clear-coverage && npm run clear-src && npm run clear-tmp",
     "clear-src": "rm -rf bin lib tasks tests",
     "clear-coverage": "rm -rf coverage",
@@ -84,6 +84,6 @@
     "git-is-clean": "[[ -z $(git status -s) ]]",
     "preunpack": "npm pack && npm run clear-tmp && npm run mkdir-tmp",
     "unpack": "tar zxvf data-merge-*.tgz -C tmp/",
-    "publishable": "npm run tsc && npm run swig-docs && npm shrinkwrap --dev && npm run git-is-clean"
+    "publishable": "npm run clear && npm run tsc && npm run swig-docs && npm shrinkwrap --dev && npm run lint && npm run git-is-clean"
   }
 }

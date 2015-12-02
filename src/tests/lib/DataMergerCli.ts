@@ -26,7 +26,7 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
       description: 'My description',
       validator: 'string',
       defaultValue: 'json',
-      unknownProperty: 'foo'
+      unknownProperty: 'foo',
     });
     test.equal(myOption.name, 'format');
     test.equal(myOption.nameShort, 'f');
@@ -51,7 +51,7 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
       nameShort: 'f',
       description: 'My description',
       validator: 'string',
-      defaultValue: 'json'
+      defaultValue: 'json',
     });
     test.equal(myOption.name, 'format');
     test.equal(myOption.nameShort, 'f');
@@ -75,7 +75,7 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
       nameShort: 'i',
       description: 'My description',
       validator: 'int',
-      defaultValue: 2
+      defaultValue: 2,
     });
     test.equal(myOption.name, 'indent');
     test.equal(myOption.nameShort, 'i');
@@ -102,14 +102,14 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
           handler.options.format.nameShort,
           handler.options.format.description,
           handler.options.format.validator,
-          handler.options.format.defaultValue
+          handler.options.format.defaultValue,
         ],
         indent: [
           handler.options.indent.nameShort,
           handler.options.indent.description,
           handler.options.indent.validator,
-          handler.options.indent.defaultValue
-        ]
+          handler.options.indent.defaultValue,
+        ],
       }
     );
 
@@ -139,7 +139,7 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
     var args: string[] = [
       'fixtures/DataMerger/a.json',
       'fixtures/DataMerger/c.yaml',
-      'fixtures/DataMerger/e.txt'
+      'fixtures/DataMerger/e.txt',
     ];
     var cases: ({
       options: {[name: string]: string | number | boolean},
@@ -148,14 +148,14 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
       {
         options: {
           format: 'none',
-          indent: 2
+          indent: 2,
         },
-        expected: ''
+        expected: '',
       },
       {
         options: {
           format: 'json',
-          indent: 2
+          indent: 2,
         },
         expected: [
           '{',
@@ -167,13 +167,13 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
           '  },',
           '  "key3": "c",',
           '  "key4": "c"',
-          '}'
-        ].join('\n')
+          '}',
+        ].join('\n'),
       },
       {
         options: {
           format: 'json',
-          indent: 4
+          indent: 4,
         },
         expected: [
           '{',
@@ -185,13 +185,13 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
           '    },',
           '    "key3": "c",',
           '    "key4": "c"',
-          '}'
-        ].join('\n')
+          '}',
+        ].join('\n'),
       },
       {
         options: {
           format: 'yml',
-          indent: 2
+          indent: 2,
         },
         expected: [
           'key1: a',
@@ -201,13 +201,13 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
           '  child2: a',
           'key3: c',
           'key4: c',
-          ''
-        ].join('\n')
+          '',
+        ].join('\n'),
       },
       {
         options: {
           format: 'yaml',
-          indent: 4
+          indent: 4,
         },
         expected: [
           'key1: a',
@@ -217,9 +217,9 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
           '    child2: a',
           'key3: c',
           'key4: c',
-          ''
-        ].join('\n')
-      }
+          '',
+        ].join('\n'),
+      },
     ];
 
     test.expect(cases.length);
@@ -239,7 +239,6 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
 
     var actual: string;
     var handler: DataMergerCli.Handler;
-    var i: number;
 
     // Mock the output handler.
     cli.output = (
@@ -255,7 +254,7 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
 
     var args: string[] = [
       'fixtures/DataMerger/a.json',
-      'fixtures/DataMerger/c.yaml'
+      'fixtures/DataMerger/c.yaml',
     ];
 
     test.expect(1);
@@ -265,13 +264,13 @@ var dataMergerCliTest: nodeunit.ITestGroup = {
       args,
       {
         format: 'yml',
-        indent: 2
+        indent: 2,
       }
     );
     test.equal(actual, '', 'Unknown command');
 
     test.done();
-  }
+  },
 
 };
 

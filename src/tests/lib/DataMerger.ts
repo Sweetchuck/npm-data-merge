@@ -23,12 +23,11 @@ var dataMergerTest: nodeunit.ITestGroup = {
       key2: 'c',
       parent: {
         child1: 'a',
-        child2: 'a'
+        child2: 'a',
       },
       key3: 'd',
       key4: 'c',
-      key5: 'd'
-
+      key5: 'd',
     };
     test.deepEqual(
       expected,
@@ -38,12 +37,12 @@ var dataMergerTest: nodeunit.ITestGroup = {
         './fixtures/DataMerger/c.yaml',
         './fixtures/DataMerger/d.yml',
         './fixtures/DataMerger/Z.yml',
-        {key1: 'custom'}
+        {key1: 'custom'},
       ])
     );
 
     test.done();
-  }
+  },
 
 };
 
