@@ -1,3 +1,11 @@
-{% macro travis(repoOwner, repoName, branch) -%}
+{% macro travisStatus(repoOwner, repoName, branch) -%}
   [![Build Status](https://travis-ci.org/{{ repoOwner }}/{{ repoName }}.svg?branch={{ branch }})](https://travis-ci.org/{{ repoOwner }}/{{ repoName }})
+{% endmacro -%}
+
+{% macro npmDependencies(repoOwner, repoName) -%}
+  [![Dependency Status](https://david-dm.org/{{ repoOwner }}/{{ repoName }}.svg)](https://david-dm.org/{{ repoOwner }}/{{ repoName }})
+{% endmacro -%}
+
+{% macro npmDevDependencies(repoOwner, repoName) -%}
+  [![devDependency Status](https://david-dm.org/{{ repoOwner }}/{{ repoName }}/dev-status.svg)](https://david-dm.org/{{ repoOwner }}/{{ repoName }}#info=devDependencies)
 {% endmacro -%}

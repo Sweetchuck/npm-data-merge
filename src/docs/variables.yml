@@ -1,8 +1,12 @@
 
 badges:
-  travis:
+  travisStatus:
     visible: true
     branch: 'master'
+  npmDependencies:
+    visible: true
+  npmDevDependencies:
+    visible: true
 
 bins:
   data-merge:
