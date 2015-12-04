@@ -38,6 +38,7 @@
     "js-yaml": "^3.4.6"
   },
   "devDependencies": {
+    "coveralls": "^2.11.4",
     "istanbul": "^0.4.1",
     "nodeunit": "^0.9.1",
     "swig": "^1.4.2",

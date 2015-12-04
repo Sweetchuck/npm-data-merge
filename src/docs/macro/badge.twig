@@ -9,3 +9,7 @@
 {% macro npmDevDependencies(repoOwner, repoName) -%}
   [![devDependency Status](https://david-dm.org/{{ repoOwner }}/{{ repoName }}/dev-status.svg)](https://david-dm.org/{{ repoOwner }}/{{ repoName }}#info=devDependencies)
 {% endmacro -%}
+
+{% macro coveralls(repoOwner, repoName, branch) -%}
+  [![Coverage Status](https://coveralls.io/repos/{{ repoOwner }}/{{ repoName }}/badge.svg?branch={{ branch }}&service=github)](https://coveralls.io/github/{{ repoOwner }}/{{ repoName }}?branch={{ branch }})
+{% endmacro -%}
