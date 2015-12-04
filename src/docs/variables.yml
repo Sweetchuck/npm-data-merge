@@ -7,6 +7,9 @@ badges:
     visible: true
   npmDevDependencies:
     visible: true
+  coveralls:
+    visible: true
+    branch: 'master'
 
 bins:
   data-merge:
