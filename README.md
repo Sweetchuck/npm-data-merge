@@ -1,5 +1,8 @@
 # data-merge
 
+[![Build Status](https://travis-ci.org/Sweetchuck/npm-data-merge.svg?branch=master)](https://travis-ci.org/Sweetchuck/npm-data-merge)
+
+
 Merge two or more YAML or JSON objects into one.
 
 ## Install
