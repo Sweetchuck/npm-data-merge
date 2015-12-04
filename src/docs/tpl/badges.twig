@@ -1,0 +1,4 @@
+{% import '../macro/badge.twig' as badge -%}
+{% if badges.travis.visible -%}
+  {{- badge.travis(repository.owner, repository.name, badges.travis.branch) -}}
+{%- endif -%}

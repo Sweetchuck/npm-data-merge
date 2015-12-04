@@ -1,0 +1,3 @@
+{% macro travis(repoOwner, repoName, branch) -%}
+  [![Build Status](https://travis-ci.org/{{ repoOwner }}/{{ repoName }}.svg?branch={{ branch }})](https://travis-ci.org/{{ repoOwner }}/{{ repoName }})
+{% endmacro -%}

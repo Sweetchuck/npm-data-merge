@@ -1,4 +1,9 @@
 
+badges:
+  travis:
+    visible: true
+    branch: 'master'
+
 bins:
   data-merge:
     description: |
