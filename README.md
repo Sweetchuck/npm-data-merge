@@ -1,6 +1,8 @@
 # data-merge
 
-[![Build Status](https://travis-ci.org/Sweetchuck/npm-data-merge.svg?branch=master)](https://travis-ci.org/Sweetchuck/npm-data-merge)
+[![Build Status](https://travis-ci.org/Sweetchuck/npm-data-merge.svg?branch=)](https://travis-ci.org/Sweetchuck/npm-data-merge)
+[![Dependency Status](https://david-dm.org/Sweetchuck/npm-data-merge.svg)](https://david-dm.org/Sweetchuck/npm-data-merge)
+[![devDependency Status](https://david-dm.org/Sweetchuck/npm-data-merge/dev-status.svg)](https://david-dm.org/Sweetchuck/npm-data-merge#info=devDependencies)
 
 
 Merge two or more YAML or JSON objects into one.
